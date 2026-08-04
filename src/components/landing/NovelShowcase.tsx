@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, BookOpen } from "lucide-react";
+import { ExternalLink, BookOpen, ImagePlus } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import { books } from "@/data/site";
 
@@ -22,14 +22,34 @@ export function NovelShowcase() {
               className="grid gap-8 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:gap-12"
             >
               <div className="mx-auto w-full max-w-[260px] md:mx-0">
-                <div className="relative aspect-[2/3] overflow-hidden rounded-sm border border-white/10 bg-neutral-950 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)]">
-                  <img
-                    src={n.cover}
-                    alt={n.coverAlt}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 h-full w-full object-contain"
-                  />
+                <div
+                  className={`relative ${n.coverRatio ?? "aspect-[2/3]"} overflow-hidden rounded-sm border ${
+                    n.cover ? "border-white/10" : "border-dashed border-white/20"
+                  } bg-neutral-950 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)]`}
+                >
+                  {n.cover ? (
+                    <img
+                      src={n.cover}
+                      alt={n.coverAlt}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-contain"
+                    />
+                  ) : (
+                    <div
+                      role="img"
+                      aria-label={`${n.coverAlt} · 封面待上传`}
+                      className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center"
+                    >
+                      <ImagePlus className="h-5 w-5 text-gold/60" aria-hidden="true" />
+                      <span className="font-mono-tight text-[10px] tracking-[0.2em] text-muted-foreground">
+                        COVER 3:4
+                      </span>
+                      <span className="text-xs leading-relaxed text-muted-foreground">
+                        封面待上传
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
 
