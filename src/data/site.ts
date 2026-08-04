@@ -1,5 +1,4 @@
 import novel1 from "@/assets/novel-1-cover.jpg";
-import novel2 from "@/assets/novel-2.jpg";
 import mecha1 from "@/assets/mecha-1.jpg";
 import mecha2 from "@/assets/mecha-2.jpg";
 import mecha3 from "@/assets/mecha-3.jpg";
@@ -20,8 +19,11 @@ export interface Book {
   genre: string;
   tagline: string;
   synopsis: string;
+  /** Cover image URL. Empty string renders a 占位符 the author can replace. */
   cover: string;
   coverAlt: string;
+  /** Tailwind aspect ratio class for the cover frame. Defaults to 2/3. */
+  coverRatio?: string;
   links: BookLink[];
 }
 
@@ -41,13 +43,14 @@ export const books: Book[] = [
   {
     index: "NO.02",
     status: "连载中",
-    title: "皇兄送我去和亲，我扶战损质子破局",
-    genre: "古言 · 和亲 · 权谋 · 战损质子 · 乱世破局",
-    tagline: "他被弃于风雪，她被送入敌国，两个残局，合成一盘活棋。",
+    title: "全民转职：送葬人的破防收集系统",
+    genre: "全民转职 · 系统 · 爽文 · 腹黑",
+    tagline: "埋葬敌人只是本职，让对手破防才是正业——物理与精神，双重超度。",
     synopsis:
-      "皇兄一道诏书，把她送去和亲，塞外风雪迎接她的，是一个满身战伤、被本国抛弃的年轻质子。她本应认命，他本应赴死；她偏要看看，两个被弃子的人，能不能在敌国的棋盘上，为自己扳回一局。宫阙、边塞、旌旗、暗涌——权谋徐徐展开，锋芒藏于袖间。",
-    cover: novel2,
-    coverAlt: "《皇兄送我去和亲，我扶战损质子破局》封面",
+      "楚休觉醒了极为罕见的“送葬人”职业，并绑定了破防收集系统。只要让对手破防，就能收集情绪点抽取盲盒！从今天起，不仅要埋葬敌人，还要在物理和精神上双重超度！",
+    cover: "",
+    coverAlt: "《全民转职：送葬人的破防收集系统》封面",
+    coverRatio: "aspect-[3/4]",
     links: [{ platform: "七猫小说", url: "" }],
   },
 ];
