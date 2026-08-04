@@ -8,7 +8,7 @@ export function NovelShowcase() {
     <section id="novels" className="relative w-full px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="Fiction · 番茄小说 × 七猫小说" title="小说作品">
-          两部正在连载的长篇，一部现代都市重生，一部古代乱世和亲。
+          两部正在连载的长篇，一部现代都市重生逆袭，一部全民转职系统爽文。
         </SectionHeading>
 
         <div className="mt-16 flex flex-col gap-14 sm:mt-20 sm:gap-20">
